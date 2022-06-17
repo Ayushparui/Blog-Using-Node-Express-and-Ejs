@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") %>
+<h1>Home</h1>
+<p><%= contentPOne %></p>
+<p><% console.log(postsI) %></p>
+<p>
+<% postsI.forEach(function(posts){ %>
+<h1>
+    <%= posts.title %>
+</h1>
+<p id="post_p">
+    <%= posts.postBody.substring(0,100) + "..."%>
+    <a href="/post/<%= posts.title %>">Read More</a>
+</p>
+<%}) %>
+</p>
+<%- include("partials/footer.ejs") %>
